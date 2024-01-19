@@ -1,0 +1,12 @@
+how to access and use the dynamic values in the workflow give a clear sample solution
+
+Certainly! To access and use dynamic values in a GitHub Actions workflow, you can use environment variables and set them dynamically during the workflow run. 
+Here's a simple example using a script to generate dynamic values and then set them as environment variables:In this example:
+
+The Set Dynamic Variables step runs a script that generates a dynamic value based on the current date and time. It then appends this value to the $GITHUB_ENV file, which makes it available as an environment variable for subsequent steps.
+
+The Show Dynamic Values step demonstrates how to access and use the dynamic value in the workflow. It echoes the dynamic value using the ${{ env.DYNAMIC_VALUE }} syntax.
+
+As a result, each time the workflow runs, it generates a new dynamic value and uses it throughout the workflow. Adjust the script inside the Set Dynamic Variables step according to your requirements for generating dynamic values.
+
+Remember to customize this example based on your specific needs and the logic required for generating dynamic values in your workflows.

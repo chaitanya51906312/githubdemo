@@ -34,3 +34,17 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          name: Dynamic Values Workflow
+     steps:
+       - name: Set Dynamic Variables
+        id: set_vars
+        run: |
+          # Use a script or command to generate dynamic values
+          DYNAMIC_VALUE=$(echo "DynamicValue-$(date '+%Y%m%d%H%M%S')")
+          echo "DYNAMIC_VALUE=${DYNAMIC_VALUE}" >> $GITHUB_ENV
+        shell: bash
+
+      - name: Show Dynamic Values
+        run: |
+          # Access the dynamic values using the GitHub Actions context
+          echo "Dynamic Value: ${{ env.DYNAMIC_VALUE }}"
